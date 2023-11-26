@@ -2,11 +2,8 @@ package stepDefinitions;
 
 import hooks.Hooks;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import Pages.HomePage;
 
@@ -24,11 +21,6 @@ public class HomeStep {
     @And("User click on Name Z to A")
     public void user_click_on_name_z_to_a() {
         homePage.clickOnValue("Name (Z to A)");
-    }
-
-    @And("User click on {string}")
-    public void user_click_on_(String string) {
-        homePage.clickOnValue(string);
     }
 
     @Then("User should be logged in")
@@ -50,4 +42,25 @@ public class HomeStep {
     public void user_click_on_logout() {
         homePage.clickOnValue("Logout");
     }
+
+    @And("User click on {string}")
+    public void user_click_on_(String string) {
+        homePage.clickOnValue(string);
+    }
+
+    @Then("The item Sauce Labs Backpack is Displayed")
+    public void the_item_sauce_labs_backpack_is_displayed() {
+        homePage.checkSauceLabsBackpackDisplayed();
+    }
+
+    @Then("The item Sauce Labs Bike Light is Displayed")
+    public void the_item_sauce_labs_bike_light_is_displayed() {
+        homePage.checkSauceLabsBikeLightDisplayed();
+    }
+
+    @Then("The item {string} is Displayed")
+    public void the_item_is_Displayed(String string) {
+        homePage.isTextDisplayed(string);
+    }
+
 }
